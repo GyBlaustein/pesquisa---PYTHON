@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório Técnico: Python e POO</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand: #3776ab;
+            --accent: #ffd43b;
+            --dark: #0f172a;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg-light); color: var(--dark); line-height: 1.6; }
+
+        /* Navbar fixa */
+        nav { 
+            background: rgba(255, 255, 255, 0.9); 
+            backdrop-filter: blur(10px); 
+            border-bottom: 1px solid var(--border); 
+            position: sticky; top: 0; z-index: 100;
+            padding: 15px 0;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 25px; }
+        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 800; color: var(--brand); font-size: 1.2rem; }
+
+        /* Header Centralizado */
+        header { padding: 80px 0; text-align: center; }
+        .badge { background: #dbeafe; color: var(--brand); padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; }
+        h1 { font-size: 3.5rem; margin-top: 15px; letter-spacing: -2px; line-height: 1.1; }
+
+        /* Seções Organizadas */
+        section { 
+            background: var(--white); 
+            border-radius: 24px; 
+            padding: 50px; 
+            margin-bottom: 40px; 
+            border: 1px solid var(--border); 
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+
+        .section-header { border-left: 4px solid var(--brand); padding-left: 20px; margin-bottom: 30px; }
+        .section-header h2 { font-size: 1.8rem; letter-spacing: -1px; }
+
+        /* Grid de Conteúdo */
+        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+        
+        .text-block p { margin-bottom: 15px; text-align: justify; color: var(--text-muted); }
+        .text-block strong { color: var(--dark); }
+
+        /* Bloco de Código Explicado */
+        .code-container { background: #1e293b; border-radius: 15px; padding: 25px; color: #fff; margin-top: 20px; }
+        .code-title { font-family: 'JetBrains Mono'; font-size: 0.8rem; color: #94a3b8; margin-bottom: 10px; display: block; }
+        code { font-family: 'JetBrains Mono'; font-size: 0.9rem; line-height: 1.5; }
+        .comment { color: #6a9955; }
+        .keyword { color: #569cd6; }
+
+        /* Lista de Pilares POO */
+        .pilar-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 20px; }
+        .pilar-item { background: #f1f5f9; padding: 20px; border-radius: 12px; border: 1px solid transparent; transition: 0.3s; }
+        .pilar-item:hover { border-color: var(--brand); transform: translateY(-3px); }
+        .pilar-item h4 { color: var(--brand); margin-bottom: 5px; }
+
+        /* Rodapé */
+        footer { text-align: center; padding: 60px 0; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .content-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-flex">
+            <div class="logo">PYTHON.RESEARCH</div>
+            <div style="font-size: 0.8rem; font-weight: 600;">MAPEAMENTO TÉCNICO v2.0</div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header data-aos="fade-down">
+            <span class="badge">ESTUDO DE CASO</span>
+            <h1>Linguagem Python &<br>Arquitetura de Objetos</h1>
+        </header>
+
+        <section data-aos="fade-up">
+            <div class="section-header">
+                <h2>01. O Poder da Simplicidade</h2>
+            </div>
+            <div class="content-grid">
+                <div class="text-block">
+                    <p>Python é uma linguagem de <strong>alto nível</strong>, o que significa que sua escrita é muito próxima da linguagem humana. Criada em 1991, ela se tornou a base para a Ciência de Dados moderna.</p>
+                    <p>Sua principal vantagem é ser <strong>multiparadigma</strong>: você pode escrever scripts simples ou sistemas complexos usando a Programação Orientada a Objetos.</p>
+                </div>
+                <div class="code-container">
+                    <span class="code-title">// Exemplo: Análise com Pandas</span>
+                    <code>
+                        <span class="keyword">import</span> pandas <span class="keyword">as</span> pd<br><br>
+                        <span class="comment"># Lê uma base de dados externa</span><br>
+                        df = pd.read_csv(<span style="color:#ce9178">"dados.csv"</span>)<br><br>
+                        <span class="comment"># Gera estatísticas automáticas</span><br>
+                        print(df.describe())
+                    </code>
+                    <div style="font-size: 0.7rem; color: #94a3b8; margin-top: 15px; border-top: 1px solid #334155; padding-top: 10px;">
+                        <strong>O que acontece?</strong> O Python resume milhões de dados (média, máximo, mínimo) em segundos.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section data-aos="fade-up">
+            <div class="section-header">
+                <h2>02. Orientação a Objetos (POO)</h2>
+            </div>
+            <div class="text-block">
+                <p>A POO organiza o software como se fosse o mundo real. Em vez de apenas comandos, temos <strong>objetos</strong> (entidades) que possuem <strong>atributos</strong> (características) e <strong>métodos</strong> (ações).</p>
+            </div>
+            
+            <div class="pilar-list">
+                <div class="pilar-item">
+                    <h4>Abstração</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Focar no que o objeto faz, e não em como ele funciona por dentro.</p>
+                </div>
+                <div class="pilar-item">
+                    <h4>Encapsulamento</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Esconder dados sensíveis dentro da classe, protegendo o código.</p>
+                </div>
+                <div class="pilar-item">
+                    <h4>Herança</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Reaproveitar comportamentos de uma classe pai em classes filhas.</p>
+                </div>
+                <div class="pilar-item">
+                    <h4>Polimorfismo</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Um mesmo comando pode se comportar de formas diferentes para objetos diferentes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section data-aos="fade-up">
+            <div class="section-header">
+                <h2>03. Por que aprender?</h2>
+            </div>
+            <div class="content-grid">
+                <div class="text-block">
+                    <p><strong>Reuso:</strong> Você não escreve o mesmo código duas vezes. Usa a Herança.</p>
+                    <p><strong>Manutenção:</strong> Se um erro ocorre no "Motor", você mexe apenas na Classe Motor, sem quebrar o resto do sistema.</p>
+                </div>
+                <div class="text-block">
+                    <p><strong>Mercado:</strong> Python é a linguagem nº 1 em inteligência artificial e automação profissional em 2026.</p>
+                </div>
+            </div>
+        </section>
+
+        <section data-aos="zoom-in" style="background: var(--brand); color: white; text-align: center;">
+            <h2 style="color: var(--accent); margin-bottom: 20px;">Referências de Estudo</h2>
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="https://www.python.org/" target="_blank" style="color: white; font-weight: 600;">Python Foundation</a>
+                <a href="https://developer.mozilla.org/" target="_blank" style="color: white; font-weight: 600;">MDN Technical</a>
+                <a href="https://www.alura.com.br/" target="_blank" style="color: white; font-weight: 600;">Alura Artigos</a>
+            </div>
+        </section>
+
+        <footer>
+            <p><strong>PESQUISA TÉCNICA - CIÊNCIA DA COMPUTAÇÃO</strong></p>
+            <p>Análise de Paradigmas e Linguagens de Programação</p>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+</body>
+</html>
